@@ -1,0 +1,22 @@
+{
+  "name": "hcs",
+  "version": "1.0.0",
+  "description": "Hydroponic Control System",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnnyB83/HCS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnnyB83/HCS/issues"
+  },
+  "homepage": "https://github.com/JohnnyB83/HCS#readme",
+  "dependencies": {
+    "pigpio": "^2.0.1"
+  }
+}
