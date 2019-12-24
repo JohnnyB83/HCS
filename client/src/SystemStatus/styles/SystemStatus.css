@@ -1,9 +1,29 @@
 .SystemStatus {
     display: grid;
-    grid-template-columns: 200px .5fr 1fr 1fr;
+    grid-template-columns: 250px 1fr;
     margin: auto;
     margin-top: 50px;
     width: 800px;
     height: 250px;
     border: 1px solid black;
+}
+
+.SystemStatus-clock {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.SystemStatus-info {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-left: 1px solid black;
+    align-items: center;
+}
+
+.SystemStatus-lightCycle {
+    grid-row: 2;
 }
