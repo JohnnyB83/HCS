@@ -1,0 +1,9 @@
+.SystemStatus {
+    display: grid;
+    grid-template-columns: 200px .5fr 1fr 1fr;
+    margin: auto;
+    margin-top: 50px;
+    width: 800px;
+    height: 250px;
+    border: 1px solid black;
+}
