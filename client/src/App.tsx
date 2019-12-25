@@ -65,6 +65,31 @@ class App extends Component<AppProps, AppState> {
     this.handleSelectionFinish = this.handleSelectionFinish.bind(this);
   }
 
+  // let profilePic = await fetch('/', {
+  //   method: 'GET',
+  //   headers: {
+  //     Accept: 'application/json',
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify({
+  //     email: email
+  //   })
+  // });
+
+  // let picData = await profilePic.json();
+
+  componentDidMount() {
+    let initalData = await fetch('/data', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+    });
+
+    let parsedData = await initialData.json();
+  }
+
   handleSelecting() {
   }
 

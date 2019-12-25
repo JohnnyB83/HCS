@@ -4,6 +4,9 @@
   "description": "Hydroponic Control System",
   "main": "app.js",
   "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node app.js",
+    "client": "npm start --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +21,7 @@
   "homepage": "https://github.com/JohnnyB83/HCS#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^5.0.2",
     "cron": "^1.7.2",
     "express": "^4.17.1",
     "pigpio": "^2.0.1"
