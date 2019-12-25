@@ -1,0 +1,181 @@
+{
+  "timeSystemHasBeenOn": "",
+  "totalTimeSystemWillBeOn": "",
+  "selectedLightCycle": "",
+  "reservoirMaxCapacity": "",
+  "reservoirRefillCadence": "",
+  "reservoirCleanCadence": "",
+  "nutrientsRefillCadene": "",
+  "nutrientsRefillAmount": "",
+  "nutrientName": "",
+  "plantArray": [
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 1,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 2,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 3,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 4,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 5,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 6,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 7,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 8,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 9,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 10,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 11,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 12,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 13,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 14,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 15,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 16,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 17,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 18,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 19,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 20,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 21,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 22,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 23,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      },
+      {
+          "plantName": "",
+          "plantState": "",
+          "plantNumber": 24,
+          "plantStartDate": "",
+          "plantHarvestDate": ""
+      }
+  ]
+}
