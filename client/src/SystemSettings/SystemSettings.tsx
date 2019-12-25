@@ -16,6 +16,17 @@ const SystemSettings: FunctionComponent<SystemSettingsProps> = ({
     return (
         <div className='SystemSettings'>
             <div className='SystemSettings-paneTitle'>Plants Selected: {selectedPlants.length}</div>
+            <div className='SystemSettings-plantState'>
+                <div>icon</div>
+                <div>icon</div>
+                <div>icon</div>
+            </div>
+            <div className='SystemSettings-plantInfo'>
+                
+            </div>
+            <div className='SystemSettings-plantSaveSettings'>
+                
+                </div>
         </div>
     )
 

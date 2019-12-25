@@ -16,3 +16,18 @@
     margin-top: 5px;
     font-weight: bold;
 }
+
+.SystemSettings-plantState {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.SystemSettings-plantInfo {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.SystemSettings-plantSaveSettings {
+    grid-column: 3;
+    grid-row: 3;
+}
