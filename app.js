@@ -13,8 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 
-app.get("/", function(req, res) {
-    console.log("get");
+app.get("/data", function(req, res) {
     let data = fs.readFileSync('HCSConfig&PlantData.json');
     let pd = JSON.parse(data);
     res.send(pd);

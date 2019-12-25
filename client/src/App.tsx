@@ -7,23 +7,7 @@ import { SelectableGroup } from 'react-selectable-fast';
 import SystemSettings from './SystemSettings/SystemSettings';
 
 import Plant from './Types/Types';
-
-const PlantTestData = [
-  {
-      plantName: 'Basil',
-      plantState: 'Seed',
-      plantNumber: 1,
-      plantStartDate: new Date(),
-      plantHarvestDate: new Date(),
-  },
-  {
-      plantName: '',
-      plantState: 'Seed',
-      plantNumber: 2,
-      plantStartDate: new Date(),
-      plantHarvestDate: new Date(),
-  },
-];
+import { parse } from '@babel/core';
 
 type AppState = {
   plantArray: Array<Plant>,
@@ -49,7 +33,7 @@ class App extends Component<AppProps, AppState> {
     super(props);
 
     this.state = {
-      plantArray: PlantTestData,
+      plantArray: [],
       selectedPlants: [],
       timeSystemHasBeenOn: new Date(),
       totalTimeSystemWillBeOn: new Date(),
@@ -65,21 +49,8 @@ class App extends Component<AppProps, AppState> {
     this.handleSelectionFinish = this.handleSelectionFinish.bind(this);
   }
 
-  // let profilePic = await fetch('/', {
-  //   method: 'GET',
-  //   headers: {
-  //     Accept: 'application/json',
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify({
-  //     email: email
-  //   })
-  // });
-
-  // let picData = await profilePic.json();
-
-  componentDidMount() {
-    let initalData = await fetch('/data', {
+  async componentDidMount() {
+    const initialData = await fetch('/data', {
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -87,7 +58,23 @@ class App extends Component<AppProps, AppState> {
       },
     });
 
-    let parsedData = await initialData.json();
+    const parsedData = await initialData.json();
+    const {
+      plantArray,
+      timeSystemHasBeenOn,
+      totalTimeSystemWillBeOn,
+      selectedLightCycle,
+      reservoirMaxCapacity,
+      reservoirRefillCadence,
+      reservoirCleanCadence,
+      nutrientsRefillCadene,
+      nutrientsRefillAmount,
+      nutrientName,
+    } = parsedData;
+
+    this.setState({
+      plantArray,
+    });
   }
 
   handleSelecting() {
