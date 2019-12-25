@@ -2,9 +2,36 @@ import React, { Component } from 'react';
 import './App.css';
 
 import SystemStatus from './SystemStatus/SystemStatus';
+import PlantContainer from './PlantContainer/PlantContainer';
+import { SelectableGroup } from 'react-selectable-fast';
+
+const PlantTestData = [
+  {
+      plantName: 'Basil',
+      plantState: 'Seed',
+      plantNumber: 1,
+      plantStartDate: new Date(),
+      plantHarvestDate: new Date(),
+  },
+  {
+      plantName: 'Basil',
+      plantState: 'Seed',
+      plantNumber: 2,
+      plantStartDate: new Date(),
+      plantHarvestDate: new Date(),
+  },
+];
+
+type Plant = {
+  plantState: String,
+  plantName: String,
+  plantNumber: Number,
+  plantStartDate: Date,
+  plantHarvestDate: Date,
+}
 
 type AppState = {
-  selectedPlants: Array<Object>,
+  plantArray: Array<Plant>,
   timeSystemHasBeenOn: Date,
   totalTimeSystemWillBeOn: Date,
   selectedLightCycle: String,
@@ -14,10 +41,6 @@ type AppState = {
   nutrientsRefillCadene: Date,
   nutrientsRefillAmount: String,
   nutrientName: String,
-  plantState: String,
-  plantName: String,
-  plantStartDate: Date,
-  plantHarvestDate: Date,
 }
 
 type AppProps = {
@@ -30,7 +53,7 @@ class App extends Component<AppProps, AppState> {
     super(props);
 
     this.state = {
-      selectedPlants: [],
+      plantArray: PlantTestData,
       timeSystemHasBeenOn: new Date(),
       totalTimeSystemWillBeOn: new Date(),
       selectedLightCycle: 'test',
@@ -40,11 +63,22 @@ class App extends Component<AppProps, AppState> {
       nutrientsRefillCadene: new Date(),
       nutrientsRefillAmount: 'test',
       nutrientName: 'test',
-      plantState: 'test',
-      plantName: 'test',
-      plantStartDate: new Date(),
-      plantHarvestDate: new Date(),
     };
+  }
+
+  handleSelecting() {
+  }
+
+  handleSelectionClear() {
+    
+  }
+
+  handleSelectionFinish() {
+    
+  }
+
+  getSelectableGroupRef = (ref: SelectableGroup | null) => {
+    ;(window as any).selectableGroup = ref
   }
   
   render() {
@@ -59,6 +93,22 @@ class App extends Component<AppProps, AppState> {
             nutrientsRefillCadene={this.state.nutrientsRefillCadene}
             nutrientsRefillAmount={this.state.nutrientsRefillAmount}
         />
+
+        <SelectableGroup
+          ref={this.getSelectableGroupRef}
+          className="SelectableGroup-plants"
+          clickClassName="SelectableGroup-plants--isSelected"
+          enableDeselect
+          tolerance={5}
+          allowClickWithoutSelected={false}
+          duringSelection={this.handleSelecting}
+          onSelectionClear={this.handleSelectionClear}
+          onSelectionFinish={this.handleSelectionFinish}
+        >
+            <PlantContainer
+                  plantArray={this.state.plantArray}
+            />
+        </SelectableGroup>
       </div>
     );
   }

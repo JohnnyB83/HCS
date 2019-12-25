@@ -1,0 +1,15 @@
+.Plant {
+    height: 50px;
+    width: 50px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.selecting {
+    color: green;
+}
+
+.selected {
+    color: orange;
+}
