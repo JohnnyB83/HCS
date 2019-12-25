@@ -1,0 +1,18 @@
+.SystemSettings {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 25px 25px 1fr;
+    margin: auto;
+    width: 800px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.SystemSettings-paneTitle {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+}

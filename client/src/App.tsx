@@ -4,6 +4,7 @@ import './App.css';
 import SystemStatus from './SystemStatus/SystemStatus';
 import PlantContainer from './PlantContainer/PlantContainer';
 import { SelectableGroup } from 'react-selectable-fast';
+import SystemSettings from './SystemSettings/SystemSettings';
 
 import Plant from './Types/Types';
 
@@ -109,7 +110,7 @@ class App extends Component<AppProps, AppState> {
             />
         </SelectableGroup>
 
-
+        <SystemSettings selectedPlants={this.state.selectedPlants} />
       </div>
     );
   }
