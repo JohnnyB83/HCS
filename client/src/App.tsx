@@ -97,8 +97,8 @@ class App extends Component<AppProps, AppState> {
         <SelectableGroup
           ref={this.getSelectableGroupRef}
           className="SelectableGroup-plants"
-          clickClassName="SelectableGroup-plants--isSelected"
-          enableDeselect
+          clickClassName="Plant"
+          enableDeselect={true}
           tolerance={5}
           allowClickWithoutSelected={false}
           duringSelection={this.handleSelecting}

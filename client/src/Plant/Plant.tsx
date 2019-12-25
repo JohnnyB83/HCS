@@ -15,6 +15,11 @@ const Plant: FunctionComponent<PlantProps> = ({
     selectableRef,
     isSelected,
     isSelecting,
+    plantState,
+    plantName,
+    plantNumber,
+    plantStartDate,
+    plantHarvestDate,
 }) => {
     const classNames = [
         'Plant',
@@ -23,6 +28,7 @@ const Plant: FunctionComponent<PlantProps> = ({
       ].filter(Boolean).join(' ')
     return (
         <div ref={selectableRef} className={classNames}>
+            <div>{plantName}</div>
         </div>
     )
 
