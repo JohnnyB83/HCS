@@ -2,15 +2,7 @@ import React, { FunctionComponent } from 'react';
 import './styles/PlantContainer.css';
 
 import SelectableComponent from '../Plant/Plant';
-
-
-type Plant = {
-    plantState: String,
-    plantName: String,
-    plantNumber: Number,
-    plantStartDate: Date,
-    plantHarvestDate: Date,
-}
+import Plant from '../Types/Types';
 
 type PlantContainerProps = {
     plantArray: Array<Plant>,

@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import './styles/Plant.css';
 
 import { TSelectableItemProps, createSelectable } from 'react-selectable-fast';
+const classNames = require('classnames');
 
 type PlantProps = TSelectableItemProps & {
     plantState: String,
@@ -21,14 +22,14 @@ const Plant: FunctionComponent<PlantProps> = ({
     plantStartDate,
     plantHarvestDate,
 }) => {
-    const classNames = [
-        'Plant',
-        isSelecting && 'selecting',
-        isSelected && 'selected'
-      ].filter(Boolean).join(' ')
+    const classNamesForComponent = classNames('Plant', {
+        'selecting': isSelecting,
+        'selected': isSelected,
+        'notPlanted': plantName === '',
+    })
     return (
-        <div ref={selectableRef} className={classNames}>
-            <div>{plantName}</div>
+        <div ref={selectableRef} className={classNamesForComponent}>
+            <div>{plantNumber}</div>
         </div>
     )
 

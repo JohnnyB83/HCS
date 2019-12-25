@@ -5,6 +5,8 @@ import SystemStatus from './SystemStatus/SystemStatus';
 import PlantContainer from './PlantContainer/PlantContainer';
 import { SelectableGroup } from 'react-selectable-fast';
 
+import Plant from './Types/Types';
+
 const PlantTestData = [
   {
       plantName: 'Basil',
@@ -14,7 +16,7 @@ const PlantTestData = [
       plantHarvestDate: new Date(),
   },
   {
-      plantName: 'Basil',
+      plantName: '',
       plantState: 'Seed',
       plantNumber: 2,
       plantStartDate: new Date(),
@@ -22,16 +24,9 @@ const PlantTestData = [
   },
 ];
 
-type Plant = {
-  plantState: String,
-  plantName: String,
-  plantNumber: Number,
-  plantStartDate: Date,
-  plantHarvestDate: Date,
-}
-
 type AppState = {
   plantArray: Array<Plant>,
+  selectedPlants: Array<Plant>,
   timeSystemHasBeenOn: Date,
   totalTimeSystemWillBeOn: Date,
   selectedLightCycle: String,
@@ -54,6 +49,7 @@ class App extends Component<AppProps, AppState> {
 
     this.state = {
       plantArray: PlantTestData,
+      selectedPlants: [],
       timeSystemHasBeenOn: new Date(),
       totalTimeSystemWillBeOn: new Date(),
       selectedLightCycle: 'test',
@@ -64,6 +60,8 @@ class App extends Component<AppProps, AppState> {
       nutrientsRefillAmount: 'test',
       nutrientName: 'test',
     };
+
+    this.handleSelectionFinish = this.handleSelectionFinish.bind(this);
   }
 
   handleSelecting() {
@@ -73,8 +71,9 @@ class App extends Component<AppProps, AppState> {
     
   }
 
-  handleSelectionFinish() {
-    
+  handleSelectionFinish(selectedItems: any) {
+    // console.log(selectedItems[0].props.plantName);
+    this.setState({ selectedPlants: selectedItems});
   }
 
   getSelectableGroupRef = (ref: SelectableGroup | null) => {
@@ -109,6 +108,8 @@ class App extends Component<AppProps, AppState> {
                   plantArray={this.state.plantArray}
             />
         </SelectableGroup>
+
+
       </div>
     );
   }

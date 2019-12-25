@@ -1,15 +1,22 @@
 .Plant {
     height: 50px;
     width: 50px;
-    background-color: #bbb;
+    background-color: lightgreen;
     border-radius: 50%;
     display: inline-block;
+    margin: 10px;
+}
+
+.notPlanted {
+    background-color: tomato;
 }
 
 .selecting {
-    color: green;
+    color: black;
+    background-color: aquamarine;
 }
 
 .selected {
-    color: orange;
+    color: black;
+    background-color: lightcyan;
 }

@@ -7,6 +7,10 @@
   justify-items: center;
 }
 
-.SelectableGroup-plants--isSelected {
-  color: red;
+.selectable-selectbox {
+  z-index: 100;
+  position: absolute;
+  cursor: default;
+  background: none;
+  border: 1px dashed grey;
 }
