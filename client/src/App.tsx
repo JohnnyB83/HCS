@@ -13,16 +13,16 @@ import { parse } from '@babel/core';
 type AppState = {
   plantArray: Array<Plant>,
   selectedPlants: Array<Plant>,
-  timeToTurnSystemOn: String,
-  timeToTurnSystemOff: String,
-  selectedLightCycle: String,
-  reservoirMaxCapacity: String,
+  timeToTurnSystemOn: string,
+  timeToTurnSystemOff: string,
+  selectedLightCycle: string,
+  reservoirMaxCapacity: string,
   reservoirRefillCadence: Date,
   reservoirCleanCadence: Date,
   nutrientsRefillCadene: Date,
-  nutrientsRefillAmount: String,
-  nutrientName: String,
-  currentTime: String,
+  nutrientsRefillAmount: string,
+  nutrientName: string,
+  currentTime: string,
 }
 
 type AppProps = {
