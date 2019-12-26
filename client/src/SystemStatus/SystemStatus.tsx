@@ -19,12 +19,12 @@ const calculateTimeLightWillBeOn = (turnOnTime: string, turnOffTime: string): st
     if (turnOffTime > turnOnTime) {
         return moment.utc(moment(turnOffTime,"HH:mm").diff(moment(turnOnTime,"HH:mm"))).format('HH:mm');
     }
-    return moment.utc(moment('24:00', 'HH:mm').diff(moment(turnOnTime,"HH:mm"))).add(moment(turnOffTime,"HH:mm").hour(), 'hours').format('HH:mm');
+    return moment.utc(moment('24:00', 'HH:mm').diff(moment(turnOnTime,"HH:mm"))).add(moment(turnOffTime,"HH:mm").hour(), 'hours').add(moment(turnOffTime,"HH:mm").minute(), 'minutes').format('HH:mm');
 }
 
 const calculateRemainingTimeLightWillBeOn = (turnOnTime: string , turnOffTime: string): string => {
     if (turnOffTime < turnOnTime) {
-        if (moment().isBetween(moment(turnOffTime,"HH:mm"), moment("24:00","HH:mm"))) {
+        if (moment().isBetween(moment(turnOffTime,"HH:mm"), moment("24:00","HH:mm")) || moment().isBetween(moment("00:00","HH:mm"), moment(turnOffTime,"HH:mm"))) {
             return moment.utc(moment(turnOffTime,"HH:mm").diff(moment())).format('HH:mm');
         }
     }
