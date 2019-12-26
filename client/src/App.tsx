@@ -5,6 +5,7 @@ import SystemStatus from './SystemStatus/SystemStatus';
 import PlantContainer from './PlantContainer/PlantContainer';
 import { SelectableGroup } from 'react-selectable-fast';
 import SystemSettings from './SystemSettings/SystemSettings';
+import moment from 'moment';
 
 import Plant from './Types/Types';
 import { parse } from '@babel/core';
@@ -12,8 +13,8 @@ import { parse } from '@babel/core';
 type AppState = {
   plantArray: Array<Plant>,
   selectedPlants: Array<Plant>,
-  timeSystemHasBeenOn: Date,
-  totalTimeSystemWillBeOn: Date,
+  timeToTurnSystemOn: String,
+  timeToTurnSystemOff: String,
   selectedLightCycle: String,
   reservoirMaxCapacity: String,
   reservoirRefillCadence: Date,
@@ -21,6 +22,7 @@ type AppState = {
   nutrientsRefillCadene: Date,
   nutrientsRefillAmount: String,
   nutrientName: String,
+  currentTime: String,
 }
 
 type AppProps = {
@@ -35,8 +37,8 @@ class App extends Component<AppProps, AppState> {
     this.state = {
       plantArray: [],
       selectedPlants: [],
-      timeSystemHasBeenOn: new Date(),
-      totalTimeSystemWillBeOn: new Date(),
+      timeToTurnSystemOn: "",
+      timeToTurnSystemOff: "",
       selectedLightCycle: 'test',
       reservoirMaxCapacity: 'test',
       reservoirRefillCadence: new Date(),
@@ -44,6 +46,7 @@ class App extends Component<AppProps, AppState> {
       nutrientsRefillCadene: new Date(),
       nutrientsRefillAmount: 'test',
       nutrientName: 'test',
+      currentTime: moment(new Date()).format('HH:mm'),
     };
 
     this.handleSelectionFinish = this.handleSelectionFinish.bind(this);
@@ -61,8 +64,8 @@ class App extends Component<AppProps, AppState> {
     const parsedData = await initialData.json();
     const {
       plantArray,
-      timeSystemHasBeenOn,
-      totalTimeSystemWillBeOn,
+      timeToTurnSystemOn,
+      timeToTurnSystemOff,
       selectedLightCycle,
       reservoirMaxCapacity,
       reservoirRefillCadence,
@@ -74,7 +77,13 @@ class App extends Component<AppProps, AppState> {
 
     this.setState({
       plantArray,
+      timeToTurnSystemOff,
+      timeToTurnSystemOn,
     });
+
+    setInterval(() => {
+      this.setState({currentTime: moment(new Date()).format('HH:mm')});
+  },1000);
   }
 
   handleSelecting() {
@@ -97,13 +106,14 @@ class App extends Component<AppProps, AppState> {
     return (
       <div className="App">
         <SystemStatus 
-            timeSystemHasBeenOn={this.state.timeSystemHasBeenOn}
-            totalTimeSystemWillBeOn={this.state.totalTimeSystemWillBeOn}
+            timeToTurnSystemOn={this.state.timeToTurnSystemOn}
+            timeToTurnSystemOff={this.state.timeToTurnSystemOff}
             reservoirRefillCadence={this.state.reservoirRefillCadence}
             reservoirCleanCadence={this.state.reservoirCleanCadence}
             reservoirMaxCapacity={this.state.reservoirMaxCapacity}
             nutrientsRefillCadene={this.state.nutrientsRefillCadene}
             nutrientsRefillAmount={this.state.nutrientsRefillAmount}
+            currentTime={this.state.currentTime}
         />
 
         <SelectableGroup

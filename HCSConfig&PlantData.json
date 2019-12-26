@@ -1,6 +1,6 @@
 {
-  "timeSystemHasBeenOn": "",
-  "totalTimeSystemWillBeOn": "",
+  "timeToTurnSystemOn": "18:00",
+  "timeToTurnSystemOff": "18:01",
   "selectedLightCycle": "",
   "reservoirMaxCapacity": "",
   "reservoirRefillCadence": "",

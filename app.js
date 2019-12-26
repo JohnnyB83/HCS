@@ -7,7 +7,13 @@
 const app = require("express")();
 const bodyParser = require("body-parser");
 const fs = require("fs");
+const moment = require("moment");
+
 app.use(bodyParser.urlencoded({extended: true}));
+
+function getCurrentTime() {
+    return moment(new Date()).format('HH:mm');
+}
 
 
 
