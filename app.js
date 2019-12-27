@@ -3,7 +3,7 @@ const CronJob = require('cron').CronJob;
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const moment = require("moment");
-const GPIO = require('pigpio').Gpio;
+const Gpio= require('pigpio').Gpio;
 
 const GPIO_ACTIVE = new Gpio(2, { mode: Gpio.OUTPUT });
 const GPIO_PASSIVE = new Gpio(3, { mode: Gpio.OUTPUT });
