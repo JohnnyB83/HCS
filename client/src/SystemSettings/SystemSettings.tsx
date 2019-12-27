@@ -10,6 +10,12 @@ type SystemSettingsProps = {
 const SystemSettings: FunctionComponent<SystemSettingsProps> = ({ 
     selectedPlants,
 }) => {
+
+    const testArray = [];
+    // for(let i = 0; i < selectedPlants.length; i++) {
+    //     console.log(selectedPlants[i].plantName)
+    //     testArray.push(selectedPlants.filter((plant) => {return plant.plantName === selectedPlants[i].plantName}));
+    // }
     if (selectedPlants.length === 0) {
         return null;
     }
@@ -22,11 +28,15 @@ const SystemSettings: FunctionComponent<SystemSettingsProps> = ({
                 <div>icon</div>
             </div>
             <div className='SystemSettings-plantInfo'>
-                
+                <div><input type='text' placeholder='Plant Name'></input></div>
+                <div><input type='text' placeholder='Plant Date'></input></div>
+                <div><input type='text' placeholder='Harvest Date'></input></div>
             </div>
             <div className='SystemSettings-plantSaveSettings'>
-                
-                </div>
+                <div><button>Save</button></div>
+                <div><button>Cancel</button></div>
+                <div><button>Reset</button></div>
+            </div>
         </div>
     )
 

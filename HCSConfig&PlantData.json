@@ -10,35 +10,35 @@
   "nutrientName": "",
   "plantArray": [
       {
-          "plantName": "",
-          "plantState": "",
+          "plantName": "Basil",
+          "plantState": "Seed",
           "plantNumber": 1,
           "plantStartDate": "",
           "plantHarvestDate": ""
       },
       {
-          "plantName": "",
-          "plantState": "",
+          "plantName": "Basil",
+          "plantState": "Seed",
           "plantNumber": 2,
           "plantStartDate": "",
           "plantHarvestDate": ""
       },
       {
-          "plantName": "",
-          "plantState": "",
+          "plantName": "Basil",
+          "plantState": "Seed",
           "plantNumber": 3,
           "plantStartDate": "",
           "plantHarvestDate": ""
       },
       {
-          "plantName": "",
+          "plantName": "Thyme",
           "plantState": "",
           "plantNumber": 4,
           "plantStartDate": "",
           "plantHarvestDate": ""
       },
       {
-          "plantName": "",
+          "plantName": "Thyme",
           "plantState": "",
           "plantNumber": 5,
           "plantStartDate": "",

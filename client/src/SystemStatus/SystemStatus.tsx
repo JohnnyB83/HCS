@@ -23,13 +23,20 @@ const calculateTimeLightWillBeOn = (turnOnTime: string, turnOffTime: string): st
 }
 
 const calculateRemainingTimeLightWillBeOn = (turnOnTime: string , turnOffTime: string): string => {
+    const currentTime = moment();
+    const cycleTime = moment.utc(moment(turnOffTime,"HH:mm").diff(currentTime)).format('HH:mm');
+
     if (turnOffTime < turnOnTime) {
-        if (moment().isBetween(moment(turnOffTime,"HH:mm"), moment("24:00","HH:mm")) || moment().isBetween(moment("00:00","HH:mm"), moment(turnOffTime,"HH:mm"))) {
-            return moment.utc(moment(turnOffTime,"HH:mm").diff(moment())).format('HH:mm');
+        if (currentTime.isBetween(moment(turnOffTime,"HH:mm"), moment("24:00","HH:mm")) && currentTime.isSameOrAfter(moment(turnOnTime,"HH:mm"))) {
+            return cycleTime;
+        }
+
+        if(currentTime.isBetween(moment("00:00","HH:mm"), moment(turnOffTime,"HH:mm"))) {
+            return cycleTime;
         }
     }
-    if (moment().isBetween(moment(turnOnTime,"HH:mm"), moment(turnOffTime,"HH:mm"))) {
-        return moment.utc(moment(turnOffTime,"HH:mm").diff(moment())).format('HH:mm');
+    if (currentTime.isBetween(moment(turnOnTime,"HH:mm"), moment(turnOffTime,"HH:mm"))) {
+        return cycleTime;
     }
     return '0:00';
 }
@@ -38,8 +45,9 @@ const displayCycleTime = (turnOnTime: string , turnOffTime: string): string => {
     if (moment.duration(calculateRemainingTimeLightWillBeOn(turnOnTime, turnOffTime)).asMinutes() > 0) {
         return `${calculateRemainingTimeLightWillBeOn(turnOnTime, turnOffTime)} / ${calculateTimeLightWillBeOn(turnOnTime, turnOffTime)}`;
     }
-    return 'Cycle Complete';
+    return `Cycle Complete`;
 }
+
 const SystemStatus: FunctionComponent<SystemStatusProps> = ({ 
     timeToTurnSystemOn,
     timeToTurnSystemOff,

@@ -15,6 +15,9 @@ function getCurrentTime() {
     return moment(new Date()).format('HH:mm');
 }
 
+console.log(moment().format('HH:mm'));
+console.log(moment().add('17', 'hours').format('HH:mm'));
+
 
 
 

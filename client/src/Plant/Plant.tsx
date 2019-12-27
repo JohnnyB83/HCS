@@ -29,7 +29,7 @@ const Plant: FunctionComponent<PlantProps> = ({
     })
     return (
         <div ref={selectableRef} className={classNamesForComponent}>
-            <div>{plantNumber}</div>
+            <div className='Plant-number'>{plantNumber}</div>
         </div>
     )
 
