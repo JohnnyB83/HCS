@@ -10,7 +10,7 @@ const GPIO_PASSIVE = new Gpio(3, { mode: Gpio.OUTPUT });
 
 const CONFIG_FILE_LOCATION = 'HCSConfig&PlantData.json';
 // check to see if we have turned on the light once, if we have we don't need to update the GPIO pins
-const INITIAL_LIGHT_TURN_ON_STATE = false;
+let INITIAL_LIGHT_TURN_ON_STATE = false;
 
 app.use(bodyParser.urlencoded({extended: true}));
 
