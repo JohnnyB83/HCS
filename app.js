@@ -1,15 +1,12 @@
-// const RPI = require('./RPI/RaspberryPiFunctions');
-
-// cron.schedule("* * * * *", function() {
-//     console.log("running a task every minute");
-//   });
-
 const app = require("express")();
 const CronJob = require('cron').CronJob;
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const moment = require("moment");
-const RPI = require('./RPI/RaspberryPiFunctions');
+const GPIO = require('pigpio').Gpio;
+
+const GPIO_ACTIVE = new Gpio(2, { mode: Gpio.OUTPUT });
+const GPIO_PASSIVE = new Gpio(3, { mode: Gpio.OUTPUT });
 
 const CONFIG_FILE_LOCATION = 'HCSConfig&PlantData.json';
 
@@ -22,9 +19,11 @@ const checkLightCycleStatus = new CronJob("* */1 * * *", function() {
 
     if (lightStatus) {
         //Turn on RPI
+        turnSystemOn();
     }
     else {
         //Turn off RPI
+        turnSystemOff();
     }
 
   });
@@ -33,6 +32,16 @@ const checkLightCycleStatus = new CronJob("* */1 * * *", function() {
 
 function getCurrentTime() {
     return moment();
+}
+
+function turnSystemOn() {
+    GPIO_ACTIVE.digitalWrite(1);
+    GPIO_PASSIVE.digitalWrite(0);
+}
+
+function turnSystemOff() {
+    GPIO_ACTIVE.digitalWrite(0);
+    GPIO_PASSIVE.digitalWrite(0);
 }
 
 function shouldLightBeOn(currentTime, turnOnTime, turnOffTime) {
