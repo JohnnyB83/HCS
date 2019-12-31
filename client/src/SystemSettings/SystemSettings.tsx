@@ -11,32 +11,39 @@ const SystemSettings: FunctionComponent<SystemSettingsProps> = ({
     selectedPlants,
 }) => {
 
-    const testArray = [];
-    // for(let i = 0; i < selectedPlants.length; i++) {
-    //     console.log(selectedPlants[i].plantName)
-    //     testArray.push(selectedPlants.filter((plant) => {return plant.plantName === selectedPlants[i].plantName}));
-    // }
+    const testArray: any = [];
+    let s = new Set();
+    selectedPlants.map((plant) => s.add(plant.plantName));
+    s.forEach((item) => {
+        testArray.push(selectedPlants.filter((plant) => plant.plantName === item));
+      })
     if (selectedPlants.length === 0) {
         return null;
-    }
+    } 
     return (
-        <div className='SystemSettings'>
-            <div className='SystemSettings-paneTitle'>Plants Selected: {selectedPlants.length}</div>
-            <div className='SystemSettings-plantState'>
-                <div>icon</div>
-                <div>icon</div>
-                <div>icon</div>
-            </div>
-            <div className='SystemSettings-plantInfo'>
-                <div><input type='text' placeholder='Plant Name'></input></div>
-                <div><input type='text' placeholder='Plant Date'></input></div>
-                <div><input type='text' placeholder='Harvest Date'></input></div>
-            </div>
-            <div className='SystemSettings-plantSaveSettings'>
-                <div><button>Save</button></div>
-                <div><button>Cancel</button></div>
-                <div><button>Reset</button></div>
-            </div>
+        <div>
+            {testArray.map((item: any, index: number) => {
+                return (
+                    <div className='SystemSettings'>
+                        <div className='SystemSettings-paneTitle'>Plants Selected: {selectedPlants.length}</div>
+                        <div className='SystemSettings-plantState'>
+                            <div>icon</div>
+                            <div>icon</div>
+                            <div>icon</div>
+                        </div>
+                        <div className='SystemSettings-plantInfo'>
+                            <div><input type='text' placeholder='Plant Name'></input></div>
+                            <div><input type='text' placeholder='Plant Date'></input></div>
+                            <div><input type='text' placeholder='Harvest Date'></input></div>
+                        </div>
+                        <div className='SystemSettings-plantSaveSettings'>
+                            <div><button>Save</button></div>
+                            <div><button>Cancel</button></div>
+                            <div><button>Reset</button></div>
+                        </div>
+                    </div>
+                );
+            })}
         </div>
     )
 

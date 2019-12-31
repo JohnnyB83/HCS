@@ -27,3 +27,7 @@
 .SystemStatus-lightCycle {
     grid-row: 2;
 }
+
+.SystemStatus-inputField {
+    width: 30px;
+}
